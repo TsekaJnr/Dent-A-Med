@@ -126,7 +126,7 @@
                             <i data-lucide="calendar"></i>
                             Book Consultation
                         </button>
-                        <a href="tel:+27000000000" class="bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 px-8 py-4 rounded-xl font-semibold shadow-sm transition flex justify-center items-center gap-2">
+                        <a href="tel:0161234567" class="bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 px-8 py-4 rounded-xl font-semibold shadow-sm transition flex justify-center items-center gap-2">
                             <i data-lucide="phone"></i>
                             Call Reception
                         </a>
@@ -161,55 +161,116 @@
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="py-20 bg-white">
+    <!-- Detailed Services Section -->
+    <section id="services" class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <h2 class="text-3xl font-bold text-slate-900 mb-4">Comprehensive Care</h2>
-                <p class="text-slate-600">We offer a wide range of medical and dental services tailored to your needs.</p>
+            <div class="text-center max-w-2xl mx-auto mb-20">
+                <span class="text-medical-600 font-bold tracking-wider uppercase text-sm">Our Expertise</span>
+                <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900 mt-2 mb-6">World-Class Treatments</h2>
+                <p class="text-lg text-slate-600">We’ve structured our practice to provide specialized care in two key departments.</p>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Service 1 -->
-                <div class="bg-slate-50 rounded-2xl p-8 transition hover:shadow-lg hover:shadow-medical-500/10 border border-slate-100 group">
-                    <div class="bg-white w-14 h-14 rounded-xl flex items-center justify-center text-medical-600 shadow-sm mb-6 group-hover:bg-medical-600 group-hover:text-white transition">
-                        <i data-lucide="smile" class="h-7 w-7"></i>
+            <!-- Department 1: Dentistry -->
+            <div class="mb-20">
+                <div class="flex items-center gap-4 mb-10 border-b border-slate-200 pb-4">
+                    <div class="bg-medical-50 p-3 rounded-full text-medical-600">
+                        <i data-lucide="smile" class="h-8 w-8"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">General Dentistry</h3>
-                    <p class="text-slate-600 mb-6">Routine check-ups, cleanings, fillings, and preventative care to keep your smile healthy.</p>
-                    <ul class="space-y-2 text-sm text-slate-500">
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-accent-DEFAULT"></i> Teeth Cleaning</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-accent-DEFAULT"></i> Root Canals</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-accent-DEFAULT"></i> Extractions</li>
-                    </ul>
+                    <h3 class="text-3xl font-bold text-slate-900">Dental Excellence</h3>
                 </div>
 
-                <!-- Service 2 -->
-                <div class="bg-slate-50 rounded-2xl p-8 transition hover:shadow-lg hover:shadow-medical-500/10 border border-slate-100 group">
-                    <div class="bg-white w-14 h-14 rounded-xl flex items-center justify-center text-accent-DEFAULT shadow-sm mb-6 group-hover:bg-accent-DEFAULT group-hover:text-white transition">
-                        <i data-lucide="sparkles" class="h-7 w-7"></i>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Service Card -->
+                    <div class="bg-slate-50 rounded-2xl p-8 hover:shadow-xl hover:bg-white border border-transparent hover:border-slate-100 transition duration-300 group">
+                        <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-medical-600 shadow-sm mb-6 group-hover:scale-110 transition group-hover:bg-medical-600 group-hover:text-white">
+                            <i data-lucide="sparkles" class="h-8 w-8"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-900 mb-3">Prophylaxis (Deep Cleaning)</h4>
+                        <p class="text-slate-600 leading-relaxed">
+                            Professional removal of plaque and tartar buildup that brushing misses. This essential procedure prevents gum disease, fights bad breath, and leaves your teeth feeling polished and smooth.
+                        </p>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Cosmetic Dentistry</h3>
-                    <p class="text-slate-600 mb-6">Transform your smile with our aesthetic treatments designed for natural-looking results.</p>
-                    <ul class="space-y-2 text-sm text-slate-500">
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-medical-600"></i> Teeth Whitening</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-medical-600"></i> Veneers</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-medical-600"></i> Crowns & Bridges</li>
-                    </ul>
+
+                    <div class="bg-slate-50 rounded-2xl p-8 hover:shadow-xl hover:bg-white border border-transparent hover:border-slate-100 transition duration-300 group">
+                        <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-medical-600 shadow-sm mb-6 group-hover:scale-110 transition group-hover:bg-medical-600 group-hover:text-white">
+                            <i data-lucide="gem" class="h-8 w-8"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-900 mb-3">Cosmetic Whitening</h4>
+                        <p class="text-slate-600 leading-relaxed">
+                            Advanced chair-side bleaching treatments that can lighten your smile by several shades in a single visit, or custom-molded take-home kits for gradual, controlled whitening.
+                        </p>
+                    </div>
+
+                    <div class="bg-slate-50 rounded-2xl p-8 hover:shadow-xl hover:bg-white border border-transparent hover:border-slate-100 transition duration-300 group">
+                        <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-medical-600 shadow-sm mb-6 group-hover:scale-110 transition group-hover:bg-medical-600 group-hover:text-white">
+                            <i data-lucide="activity" class="h-8 w-8"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-900 mb-3">Root Canal Therapy</h4>
+                        <p class="text-slate-600 leading-relaxed">
+                            A pain-relieving procedure designed to save a severely infected or decayed tooth. We carefully remove the infection and seal the tooth, allowing you to keep your natural smile.
+                        </p>
+                    </div>
+
+                    <div class="bg-slate-50 rounded-2xl p-8 hover:shadow-xl hover:bg-white border border-transparent hover:border-slate-100 transition duration-300 group">
+                        <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-medical-600 shadow-sm mb-6 group-hover:scale-110 transition group-hover:bg-medical-600 group-hover:text-white">
+                            <i data-lucide="shield-check" class="h-8 w-8"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-900 mb-3">Crowns & Bridges</h4>
+                        <p class="text-slate-600 leading-relaxed">
+                            Custom-crafted restorative solutions for damaged or missing teeth. Our crowns restore strength to weak teeth, while bridges seamlessly fill gaps to restore full chewing function.
+                        </p>
+                    </div>
+                     <div class="bg-slate-50 rounded-2xl p-8 hover:shadow-xl hover:bg-white border border-transparent hover:border-slate-100 transition duration-300 group">
+                        <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-medical-600 shadow-sm mb-6 group-hover:scale-110 transition group-hover:bg-medical-600 group-hover:text-white">
+                            <i data-lucide="briefcase-medical" class="h-8 w-8"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-900 mb-3">Emergency Dental</h4>
+                        <p class="text-slate-600 leading-relaxed">
+                            Immediate care for toothaches, chipped teeth, or accidents. We prioritize pain relief and quick stabilization to prevent further damage.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Department 2: Medical & Skin -->
+            <div>
+                <div class="flex items-center gap-4 mb-10 border-b border-slate-200 pb-4">
+                    <div class="bg-accent-light/30 p-3 rounded-full text-accent-DEFAULT">
+                        <i data-lucide="stethoscope" class="h-8 w-8"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold text-slate-900">Medical & Skin Care</h3>
                 </div>
 
-                <!-- Service 3 -->
-                <div class="bg-slate-50 rounded-2xl p-8 transition hover:shadow-lg hover:shadow-medical-500/10 border border-slate-100 group">
-                    <div class="bg-white w-14 h-14 rounded-xl flex items-center justify-center text-medical-600 shadow-sm mb-6 group-hover:bg-medical-600 group-hover:text-white transition">
-                        <i data-lucide="stethoscope" class="h-7 w-7"></i>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-slate-50 rounded-2xl p-8 hover:shadow-xl hover:bg-white border border-transparent hover:border-slate-100 transition duration-300 group">
+                        <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-accent-DEFAULT shadow-sm mb-6 group-hover:scale-110 transition group-hover:bg-accent-DEFAULT group-hover:text-white">
+                            <i data-lucide="clipboard-check" class="h-8 w-8"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-900 mb-3">General Consultations</h4>
+                        <p class="text-slate-600 leading-relaxed">
+                            Comprehensive health assessments for the whole family. From diagnosing acute illnesses like flu to managing chronic conditions like hypertension and diabetes.
+                        </p>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">General Medicine</h3>
-                    <p class="text-slate-600 mb-6">Holistic health checks and skin examinations by our resident medical practitioner.</p>
-                    <ul class="space-y-2 text-sm text-slate-500">
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-accent-DEFAULT"></i> General Check-ups</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-accent-DEFAULT"></i> Skin Examinations</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-accent-DEFAULT"></i> Prescriptions</li>
-                    </ul>
+
+                    <div class="bg-slate-50 rounded-2xl p-8 hover:shadow-xl hover:bg-white border border-transparent hover:border-slate-100 transition duration-300 group">
+                        <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-accent-DEFAULT shadow-sm mb-6 group-hover:scale-110 transition group-hover:bg-accent-DEFAULT group-hover:text-white">
+                            <i data-lucide="scan-face" class="h-8 w-8"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-900 mb-3">Skin Examinations</h4>
+                        <p class="text-slate-600 leading-relaxed">
+                            Specialized dermatological screenings including mole mapping and acne assessments. Early detection of skin irregularities is key to long-term health.
+                        </p>
+                    </div>
+
+                    <div class="bg-slate-50 rounded-2xl p-8 hover:shadow-xl hover:bg-white border border-transparent hover:border-slate-100 transition duration-300 group">
+                        <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-accent-DEFAULT shadow-sm mb-6 group-hover:scale-110 transition group-hover:bg-accent-DEFAULT group-hover:text-white">
+                            <i data-lucide="syringe" class="h-8 w-8"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-900 mb-3">Wellness Injections</h4>
+                        <p class="text-slate-600 leading-relaxed">
+                            Administering necessary vaccinations and vitamin injections (such as B12) to boost immunity and energy levels under medical supervision.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -312,7 +373,10 @@
                             </div>
                             <div>
                                 <h4 class="font-bold text-slate-900">Contact</h4>
-                                <p class="text-slate-600">Reception: (016) 123-4567<br>Emergency: (082) 123-4567</p>
+                                <div class="text-slate-600 space-y-1">
+                                    <p>Reception: <a href="tel:0161234567" class="font-medium text-medical-700 hover:text-medical-500 transition underline decoration-transparent hover:decoration-medical-500">(016) 123-4567</a></p>
+                                    <p>Emergency: <a href="tel:0821234567" class="font-medium text-medical-700 hover:text-medical-500 transition underline decoration-transparent hover:decoration-medical-500">(082) 123-4567</a></p>
+                                </div>
                             </div>
                         </div>
 
