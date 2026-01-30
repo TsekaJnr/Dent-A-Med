@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dent-A-Med | Vanderbijlpark Medical & Dental Centre</title>
+    <meta name="description" content="Professional dental and medical care in Vanderbijlpark. Dr. Theo Volschenk, Dr. Sachs, and Dr. Yda Dippenaar.">
+    
+    <!-- Tailwind CSS for rapid styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        medical: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0ea5e9', // Bright Blue
+                            600: '#0284c7',
+                            700: '#0369a1', // Deep Blue
+                            800: '#075985',
+                        },
+                        accent: {
+                            light: '#e9d5ff',
+                            DEFAULT: '#7e22ce', // Deep Purple (from the board)
+                            dark: '#581c87',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Smooth Scrolling */
+        html { scroll-behavior: smooth; }
+        
+        /* Hero Pattern */
+        .hero-bg {
+            background-color: #f8fafc;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230ea5e9' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-700 antialiased bg-slate-50">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-sm border-b border-slate-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <div class="bg-gradient-to-br from-medical-600 to-accent-DEFAULT text-white p-2 rounded-lg">
+                        <i data-lucide="activity" class="h-6 w-6"></i>
+                    </div>
+                    <div>
+                        <span class="block text-xl font-bold text-slate-900 tracking-tight leading-none">DENT-A-MED</span>
+                        <span class="block text-xs text-accent-DEFAULT font-medium tracking-wider">MEDICAL CENTRE</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#services" class="text-slate-600 hover:text-medical-600 font-medium transition">Services</a>
+                    <a href="#doctors" class="text-slate-600 hover:text-medical-600 font-medium transition">Our Team</a>
+                    <a href="#location" class="text-slate-600 hover:text-medical-600 font-medium transition">Location</a>
+                    <button onclick="openModal()" class="bg-medical-600 hover:bg-medical-700 text-white px-6 py-2.5 rounded-full font-medium transition shadow-lg shadow-medical-500/30 flex items-center gap-2">
+                        <span>Book Appointment</span>
+                        <i data-lucide="arrow-right" class="h-4 w-4"></i>
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-medical-600 p-2">
+                        <i data-lucide="menu" class="h-6 w-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 absolute w-full">
+            <div class="px-4 pt-2 pb-6 space-y-2 shadow-xl">
+                <a href="#services" class="block px-3 py-3 text-slate-600 hover:bg-medical-50 hover:text-medical-600 rounded-lg font-medium">Services</a>
+                <a href="#doctors" class="block px-3 py-3 text-slate-600 hover:bg-medical-50 hover:text-medical-600 rounded-lg font-medium">Our Team</a>
+                <a href="#location" class="block px-3 py-3 text-slate-600 hover:bg-medical-50 hover:text-medical-600 rounded-lg font-medium">Location</a>
+                <button onclick="openModal()" class="w-full mt-4 bg-medical-600 text-white px-4 py-3 rounded-lg font-medium shadow-md">Book Appointment</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden hero-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+                <div class="mb-12 lg:mb-0">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent-light/30 text-accent-dark border border-accent-light/50 mb-6">
+                        <span class="flex h-2 w-2 rounded-full bg-accent-DEFAULT"></span>
+                        <span class="text-sm font-semibold tracking-wide">ACCEPTING NEW PATIENTS</span>
+                    </div>
+                    <h1 class="text-4xl lg:text-6xl font-extrabold text-slate-900 tracking-tight mb-6 leading-tight">
+                        Quality Care for the <span class="text-transparent bg-clip-text bg-gradient-to-r from-medical-600 to-accent-DEFAULT">Whole Family</span>
+                    </h1>
+                    <p class="text-lg text-slate-600 mb-8 leading-relaxed max-w-lg">
+                        Experience modern dentistry and comprehensive medical care under one roof. We combine advanced technology with a gentle touch right here in Vanderbijlpark.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button onclick="openModal()" class="bg-medical-600 hover:bg-medical-700 text-white px-8 py-4 rounded-xl font-semibold shadow-xl shadow-medical-500/20 transition transform hover:-translate-y-1 flex justify-center items-center gap-2">
+                            <i data-lucide="calendar"></i>
+                            Book Consultation
+                        </button>
+                        <a href="tel:+27000000000" class="bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 px-8 py-4 rounded-xl font-semibold shadow-sm transition flex justify-center items-center gap-2">
+                            <i data-lucide="phone"></i>
+                            Call Reception
+                        </a>
+                    </div>
+                </div>
+                <!-- Abstract Medical Image/Illustration -->
+                <div class="relative">
+                    <div class="absolute -inset-4 bg-gradient-to-r from-medical-500 to-accent-DEFAULT opacity-20 blur-2xl rounded-full"></div>
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
+                        <!-- Placeholder for a clinic interior shot or happy patient -->
+                        <div class="bg-slate-200 h-64 sm:h-80 w-full flex items-center justify-center relative overflow-hidden group">
+                             <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=1000" alt="Modern Dental Clinic" class="object-cover w-full h-full transform transition duration-700 group-hover:scale-105">
+                             <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                             <div class="absolute bottom-4 left-4 text-white">
+                                <p class="font-bold text-lg">Modern Facilities</p>
+                                <p class="text-sm opacity-90">Schumann Street, Vanderbijlpark</p>
+                             </div>
+                        </div>
+                    </div>
+                    <!-- Floating Badge -->
+                    <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-xl border border-slate-100 flex items-center gap-3 animate-bounce" style="animation-duration: 3s;">
+                        <div class="bg-green-100 p-2 rounded-full text-green-600">
+                            <i data-lucide="check-circle" class="h-6 w-6"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-slate-500 font-bold uppercase">Medical Aid</p>
+                            <p class="text-slate-900 font-bold">Rates Accepted</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-3xl font-bold text-slate-900 mb-4">Comprehensive Care</h2>
+                <p class="text-slate-600">We offer a wide range of medical and dental services tailored to your needs.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-slate-50 rounded-2xl p-8 transition hover:shadow-lg hover:shadow-medical-500/10 border border-slate-100 group">
+                    <div class="bg-white w-14 h-14 rounded-xl flex items-center justify-center text-medical-600 shadow-sm mb-6 group-hover:bg-medical-600 group-hover:text-white transition">
+                        <i data-lucide="smile" class="h-7 w-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">General Dentistry</h3>
+                    <p class="text-slate-600 mb-6">Routine check-ups, cleanings, fillings, and preventative care to keep your smile healthy.</p>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-accent-DEFAULT"></i> Teeth Cleaning</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-accent-DEFAULT"></i> Root Canals</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-accent-DEFAULT"></i> Extractions</li>
+                    </ul>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-slate-50 rounded-2xl p-8 transition hover:shadow-lg hover:shadow-medical-500/10 border border-slate-100 group">
+                    <div class="bg-white w-14 h-14 rounded-xl flex items-center justify-center text-accent-DEFAULT shadow-sm mb-6 group-hover:bg-accent-DEFAULT group-hover:text-white transition">
+                        <i data-lucide="sparkles" class="h-7 w-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Cosmetic Dentistry</h3>
+                    <p class="text-slate-600 mb-6">Transform your smile with our aesthetic treatments designed for natural-looking results.</p>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-medical-600"></i> Teeth Whitening</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-medical-600"></i> Veneers</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-medical-600"></i> Crowns & Bridges</li>
+                    </ul>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-slate-50 rounded-2xl p-8 transition hover:shadow-lg hover:shadow-medical-500/10 border border-slate-100 group">
+                    <div class="bg-white w-14 h-14 rounded-xl flex items-center justify-center text-medical-600 shadow-sm mb-6 group-hover:bg-medical-600 group-hover:text-white transition">
+                        <i data-lucide="stethoscope" class="h-7 w-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">General Medicine</h3>
+                    <p class="text-slate-600 mb-6">Holistic health checks and skin examinations by our resident medical practitioner.</p>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-accent-DEFAULT"></i> General Check-ups</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-accent-DEFAULT"></i> Skin Examinations</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-accent-DEFAULT"></i> Prescriptions</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Doctors Section -->
+    <section id="doctors" class="py-20 bg-slate-900 text-white relative overflow-hidden">
+        <!-- Background decorative blobs -->
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-medical-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-96 h-96 bg-accent-DEFAULT rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <span class="text-medical-400 font-semibold tracking-wider uppercase text-sm">Expert Care</span>
+                <h2 class="text-3xl md:text-4xl font-bold mt-2">Meet Our Specialists</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Dr 1 -->
+                <div class="bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 hover:border-medical-500 transition group">
+                    <div class="h-64 bg-slate-700 relative overflow-hidden">
+                         <!-- Placeholder for Headshot -->
+                        <div class="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-slate-700 to-slate-600 text-slate-500">
+                            <i data-lucide="user" class="h-24 w-24 opacity-50"></i>
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-slate-900 to-transparent">
+                            <span class="bg-medical-600 text-white text-xs font-bold px-2 py-1 rounded">DENTIST</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-1">Dr. Sachs</h3>
+                        <p class="text-slate-400 text-sm mb-4">Dental Surgeon</p>
+                        <p class="text-slate-300 text-sm mb-6 leading-relaxed">Dedicated to modern, pain-free dentistry and creating confident smiles for patients of all ages.</p>
+                        <button onclick="openModal('Dr. Sachs')" class="w-full py-3 rounded-lg border border-slate-600 hover:bg-medical-600 hover:border-medical-600 text-white transition font-medium">Book Appointment</button>
+                    </div>
+                </div>
+
+                <!-- Dr 2 -->
+                <div class="bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 hover:border-medical-500 transition group">
+                    <div class="h-64 bg-slate-700 relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-slate-700 to-slate-600 text-slate-500">
+                            <i data-lucide="user" class="h-24 w-24 opacity-50"></i>
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-slate-900 to-transparent">
+                            <span class="bg-medical-600 text-white text-xs font-bold px-2 py-1 rounded">DENTIST</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-1">Dr. Theo Volschenk</h3>
+                        <p class="text-slate-400 text-sm mb-4">Dental Surgeon</p>
+                        <p class="text-slate-300 text-sm mb-6 leading-relaxed">Over 20 years of experience in restorative dentistry and family dental health care.</p>
+                        <button onclick="openModal('Dr. Theo Volschenk')" class="w-full py-3 rounded-lg border border-slate-600 hover:bg-medical-600 hover:border-medical-600 text-white transition font-medium">Book Appointment</button>
+                    </div>
+                </div>
+
+                <!-- Dr 3 -->
+                <div class="bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 hover:border-accent-DEFAULT transition group">
+                    <div class="h-64 bg-slate-700 relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-slate-700 to-slate-600 text-slate-500">
+                            <i data-lucide="user" class="h-24 w-24 opacity-50"></i>
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-slate-900 to-transparent">
+                            <span class="bg-accent-DEFAULT text-white text-xs font-bold px-2 py-1 rounded">GP / SKIN</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-1">Dr. Yda Dippenaar</h3>
+                        <p class="text-slate-400 text-sm mb-4">General Practitioner</p>
+                        <p class="text-slate-300 text-sm mb-6 leading-relaxed">Providing comprehensive medical check-ups and specialized skin examinations.</p>
+                        <button onclick="openModal('Dr. Yda Dippenaar')" class="w-full py-3 rounded-lg border border-slate-600 hover:bg-accent-DEFAULT hover:border-accent-DEFAULT text-white transition font-medium">Book Appointment</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Contact -->
+    <section id="location" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-16">
+                <!-- Info -->
+                <div class="mb-12 lg:mb-0">
+                    <h2 class="text-3xl font-bold text-slate-900 mb-6">Visit Our Practice</h2>
+                    <p class="text-slate-600 mb-8">Conveniently located in Vanderbijlpark with ample parking available.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="bg-white p-3 rounded-lg shadow-sm text-medical-600">
+                                <i data-lucide="map-pin" class="h-6 w-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900">Address</h4>
+                                <p class="text-slate-600">17 Schumann Street<br>Vanderbijlpark, 1911</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="bg-white p-3 rounded-lg shadow-sm text-medical-600">
+                                <i data-lucide="phone" class="h-6 w-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900">Contact</h4>
+                                <p class="text-slate-600">Reception: (016) 123-4567<br>Emergency: (082) 123-4567</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="bg-white p-3 rounded-lg shadow-sm text-medical-600">
+                                <i data-lucide="clock" class="h-6 w-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900">Hours</h4>
+                                <p class="text-slate-600">Mon - Fri: 08:00 - 17:00<br>Sat: By Appointment<br>Sun: Closed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Map Placeholder -->
+                <div class="h-96 bg-slate-200 rounded-2xl overflow-hidden shadow-lg border-4 border-white relative group">
+                     <!-- Using an iframe for a real map feel, but with no API key needed for basic embed -->
+                     <iframe 
+                        width="100%" 
+                        height="100%" 
+                        frameborder="0" 
+                        scrolling="no" 
+                        marginheight="0" 
+                        marginwidth="0" 
+                        src="https://maps.google.com/maps?q=17%20Schumann%20St%2C%20Vanderbijlpark&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                        class="grayscale group-hover:grayscale-0 transition duration-500"
+                    ></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-2">
+                    <i data-lucide="activity" class="h-6 w-6 text-medical-500"></i>
+                    <span class="text-white font-bold text-lg">DENT-A-MED</span>
+                </div>
+                <div class="text-sm">
+                    &copy; 2026 Dent-A-Med. Website by <span class="text-white font-medium cursor-pointer hover:text-medical-400">Junior</span>.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="fixed inset-0 z-[60] hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <!-- Background backdrop -->
+        <div class="fixed inset-0 bg-slate-900/75 transition-opacity backdrop-blur-sm" onclick="closeModal()"></div>
+
+        <div class="fixed inset-0 z-10 overflow-y-auto">
+            <div class="flex min-h-full items-center justify-center p-4 text-center sm:p-0">
+                <div class="relative transform overflow-hidden rounded-2xl bg-white text-left shadow-2xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
+                    <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+                        <div class="sm:flex sm:items-start">
+                            <div class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left w-full">
+                                <h3 class="text-xl font-semibold leading-6 text-slate-900" id="modal-title">Request Appointment</h3>
+                                <div class="mt-2">
+                                    <p class="text-sm text-slate-500 mb-4">Fill in your details and we will call you back to confirm a time.</p>
+                                    
+                                    <form class="space-y-4" onsubmit="event.preventDefault(); alert('In the live version, this will email the reception directly!'); closeModal();">
+                                        <div>
+                                            <label class="block text-sm font-medium text-slate-700">Preferred Doctor</label>
+                                            <select id="doctorSelect" class="mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-medical-500 focus:ring-medical-500 sm:text-sm p-2 border bg-slate-50">
+                                                <option>No Preference</option>
+                                                <option>Dr. Sachs (Dentist)</option>
+                                                <option>Dr. Theo Volschenk (Dentist)</option>
+                                                <option>Dr. Yda Dippenaar (GP)</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <label class="block text-sm font-medium text-slate-700">Your Name</label>
+                                            <input type="text" class="mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-medical-500 focus:ring-medical-500 sm:text-sm p-2 border bg-slate-50" placeholder="John Doe">
+                                        </div>
+                                        <div>
+                                            <label class="block text-sm font-medium text-slate-700">Phone Number</label>
+                                            <input type="tel" class="mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-medical-500 focus:ring-medical-500 sm:text-sm p-2 border bg-slate-50" placeholder="082 123 4567">
+                                        </div>
+                                        <div class="mt-5 sm:mt-6 sm:grid sm:grid-flow-row-dense sm:grid-cols-2 sm:gap-3">
+                                            <button type="submit" class="inline-flex w-full justify-center rounded-md bg-medical-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-medical-500 sm:col-start-2">Send Request</button>
+                                            <button type="button" class="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 hover:bg-slate-50 sm:col-start-1 sm:mt-0" onclick="closeModal()">Cancel</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Modal Logic
+        function openModal(doctorName = null) {
+            document.getElementById('bookingModal').classList.remove('hidden');
+            if(doctorName) {
+                const select = document.getElementById('doctorSelect');
+                // Simple logic to select the right option
+                for (let i = 0; i < select.options.length; i++) {
+                    if (select.options[i].text.includes(doctorName)) {
+                        select.selectedIndex = i;
+                        break;
+                    }
+                }
+            }
+        }
+
+        function closeModal() {
+            document.getElementById('bookingModal').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
